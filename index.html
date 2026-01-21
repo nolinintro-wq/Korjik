@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коржик Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-screen">
+        <img class="avatar" style="width: 80px; height: 80px; box-shadow: none; border-color: rgba(255,255,255,0.2);" src="https://i.postimg.cc/brtY69c1/9a8a6eb652598aff8c0bbb1a77832b04.jpg" alt="Lock">
+        <h3>Доступ ограничен</h3>
+        <p style="font-size: 12px; color: var(--text-dim); margin-top: 5px;">
+        Для входа ответь на вопрос:<br>
+        <b>Кто обворожительный котик?</b>
+        </p>
+        <input type="text" id="password-input" placeholder="Твой ответ...">
+        <button onclick="checkAccess()">Открыть доступ</button>
+    </div>
+    <div class="card">
+        <header>            
+            <img class="avatar" src="https://i.postimg.cc/sxkd1kL5/1768833548.jpg" alt="фото Насти">
+        </header>
+        <main>
+            <h1></h1>
+            <p class="tagline"></p>
+            
+            <section class="stats">
+                <div class="stats-items">
+                    <span>Суперсила:</span>
+                    <span id="power"></span>
+                </div>
+                <div class="stats-items">
+                    <span>Вход в ринг:</span>
+                    <span id="music"></span>
+                </div>
+                <div class="stats-items">
+                    <span>Первый указ после захвата мира:</span>
+                    <span id="decree"></span>
+                </div>
+            </section>
+
+            <div class="blitz-container">
+                <p class="blitz-title">Блиц-раунд: выбор королевы</p>
+                <div class="blitz-row"><span class="choice">Чай</span> / <span class="choice active">☕ Кофе</span></div>
+                <div class="blitz-row"><span class="choice">Кошка</span> / <span class="choice active">🐕 Собака</span></div>
+                <div class="blitz-row"><span class="choice">Классика</span> / <span class="choice active">🤘 Рок</span></div>
+                <div class="blitz-row"><span class="choice">Бита</span> / <span class="choice active">🎻 Скрипка</span></div>
+            </div>
+        </main>
+        <footer>            
+            <a href="#" id="tg-button" class="btn-tg">Написать в Telegram</a>            
+            <a href="https://vk.com/idXXXXXXX" class="btn-vk">Посмотреть ВК</a>
+        </footer>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
