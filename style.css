@@ -1,8 +1,10 @@
+/* сброс всех отступов */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+/* Добавляем краски с доступом по идентификации */
 :root {
     --bg-color: #020617;  
     --card-bg: rgba(30, 41, 59, 0.5);
@@ -10,6 +12,7 @@
     --text: #f8fafc;         
     --text-dim: #94a3b8;
 }
+/* описываем тело документа */
 body {
     background-color: var(--bg-color);
     color: var(--text);
@@ -33,7 +36,7 @@ body {
     width: 90%;
     max-width: 350px;
 }
-
+/* описываем поле ввода в окне блокировки */
 #login-screen input {
     width: 100%;
     padding: 12px;
@@ -45,7 +48,7 @@ body {
     text-align: center;
     outline: none;
 }
-
+/* Описываем кнопку под окном ввода блокировки */
 #login-screen button {
     margin-top: 15px;
 }
@@ -162,4 +165,30 @@ footer {
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
+}
+body::before{
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: 
+    radial-gradient(1.5px 1.5px at 80% 35%, var(--accent), transparent), 
+    radial-gradient(1px 1px at 25% 65%, white, transparent),
+    radial-gradient(1px 1px at 15% 20%, white, transparent),
+    radial-gradient(2px 2px at 45% 85%, white, transparent);
+    background-size: 200px 200px;
+    pointer-events: none;
+    animation: starMood 6s infinite alternate ease-in-out;
+    
+}
+@keyframes starMood {
+    0% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1.1); /* Звезды будут плавно "выплывать" на нас */
+    }
 }
