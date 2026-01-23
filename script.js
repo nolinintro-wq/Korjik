@@ -6,12 +6,19 @@ const KorzhData = {
         music: "Би - 2 Полковнику никто не пишет 🫡",
         decree: "Смертная казнь за жестокое обращение с животными 🐾"
     },
+    vibe: { 
+    poetry: "Сергей Есенин 📖", 
+    music: "Операция Пластилин / СДП 🎸",
+    born: "Рано утром 🌅", 
+    birthday: "26 Февраля ❄️" 
+    },    
     blitz: [ 
         { q1: '🍵 Чай', q2: '☕️ Кофе', active: 2 }, 
         { q1: '🐈 Кошка', q2: '🐩 Собака', active: 2 }, 
         { q1: '🎼 Классика', q2: '🎸 Рок', active: 2 }, 
         { q1: '🏏 Бита', q2: '🎻 Скрипка', active: 2 } 
     ]
+    
 };
 
 function fillProfile() {
@@ -20,6 +27,10 @@ function fillProfile() {
     document.getElementById('power').textContent = KorzhData.stats.power;
     document.getElementById('music').textContent = KorzhData.stats.music;
     document.getElementById('decree').textContent = KorzhData.stats.decree;
+                document.getElementById('vibe-born').textContent =
+KorzhData.vibe.born;              document.getElementById('vibe-birthday').textContent =
+KorzhData.vibe.birthday; document.getElementById('vibe-poetry').textContent = 
+KorzhData.vibe.poetry; document.getElementById('vibe-music').textContent = KorzhData.vibe.music;
 }
 
 function renderBlitz() { 
