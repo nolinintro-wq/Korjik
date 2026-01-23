@@ -14,7 +14,6 @@ const KorzhData = {
     ]
 };
 
-// 1. Заполнение текста
 function fillProfile() {
     document.querySelector('h1').textContent = KorzhData.name;
     document.querySelector('.tagline').textContent = KorzhData.tagline;
@@ -23,11 +22,9 @@ function fillProfile() {
     document.getElementById('decree').textContent = KorzhData.stats.decree;
 }
 
-// 2. Отрисовка Блица
 function renderBlitz() { 
     const container = document.querySelector('.blitz-container');
     container.innerHTML = '<p class="blitz-title">Блиц-опрос: Выбор королевы 👑</p>';
-
     KorzhData.blitz.forEach(item => { 
         const row = document.createElement('div');
         row.className = 'blitz-row'; 
@@ -40,24 +37,17 @@ function renderBlitz() {
     });
 }
 
-// 3. ТА САМАЯ ФУНКЦИЯ (Клики по блицу)
 function initBlitzInteractivity() {
     const container = document.querySelector('.blitz-container');
-    if (container) {
-        container.addEventListener('click', function(e) {
-            // Если нажали на вариант выбора
-            if (e.target.classList.contains('choice')) {
-                const row = e.target.closest('.blitz-row');
-                // Гасим все варианты в этой строке
-                row.querySelectorAll('.choice').forEach(el => el.classList.remove('active'));
-                // Зажигаем тот, по которому кликнули
-                e.target.classList.add('active');
-            }
-        });
-    }
+    container.addEventListener('click', function(e) {
+        if (e.target.classList.contains('choice')) {
+            const row = e.target.closest('.blitz-row');
+            row.querySelectorAll('.choice').forEach(el => el.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    });
 }
 
-// 4. Логика входа
 function checkAccess() {
     const val = document.getElementById('password-input').value.toLowerCase().trim();
     const card = document.querySelector('.card');
@@ -66,10 +56,7 @@ function checkAccess() {
     if (val === 'коржик' || val === 'корж') {
         login.style.display = 'none';
         card.style.display = 'block'; 
-        
-        // Запоминаем в памяти браузера
         localStorage.setItem('isAuth', 'true');
-        
         fillProfile();
         renderBlitz();
         initBlitzInteractivity();
@@ -79,7 +66,7 @@ function checkAccess() {
     }
 }
 
-// 5. Кнопка ТГ
+// Кнопка ТГ
 const btn = document.getElementById('tg-button');
 if (btn) { 
     btn.addEventListener('click', function(e) {           
@@ -88,26 +75,27 @@ if (btn) {
     });
 }
 
-// 6. Вход по Enter
-const passInput = document.getElementById('password-input');
-if (passInput) {
-    passInput.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            checkAccess();
-        }
-    });
-}
+// Вход по Enter
+document.getElementById('password-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') checkAccess();
+});
 
-// 7. АВТОВХОД ПРИ ЗАГРУЗКЕ
+// Автоматический вход
 window.onload = function() {
     if (localStorage.getItem('isAuth') === 'true') {
         document.getElementById('login-screen').style.display = 'none';
         document.querySelector('.card').style.display = 'block'; 
-        
-        // Сразу "оживляем" сайт данными
         fillProfile(); 
         renderBlitz(); 
         initBlitzInteractivity(); 
-        console.log("Авторизация подтверждена из LocalStorage");
     } 
 };
+
+// 8. ФУНКЦИЯ СБРОСА (Logout) 
+function handleLogout() { 
+// Вызываем системное окно подтверждения
+const confirmReset = confirm("Вернуть экран блокировки?"); if (confirmReset) {  
+// 1. Стираем метку входа из памяти
+localStorage.removeItem('isAuth'); 
+// 2. Мгновенно перезагружаем страницу
+location.reload(); } }

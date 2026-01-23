@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Коржик Premium</title>
+    <!-- Подключаем шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Подключаем стили -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ЭКРАН ВХОДА -->
     <div id="login-screen">
         <img class="avatar" src="https://i.postimg.cc/brtY69c1/9a8a6eb652598aff8c0bbb1a77832b04.jpg" alt="Lock">
         <h3>Доступ ограничен</h3>
-        <p style="font-size: 12px; color: var(--text-dim); margin-top: 5px;">
-        Для входа ответь на вопрос:<br>
-        <b>Кто обворожительный котик?</b>
-        </p>
+        <p>Для входа ответь на вопрос:<br><b>Кто обворожительный котик?</b></p>
         <input type="text" id="password-input" placeholder="Твой ответ...">
         <button onclick="checkAccess()">Открыть доступ</button>
     </div>
+
+    <!-- ОСНОВНАЯ КАРТОЧКА -->
     <div class="card">
         <header>            
-            <img class="avatar" src="https://i.postimg.cc/sxkd1kL5/1768833548.jpg" alt="фото Насти">
+            <img class="avatar" id="logout-trigger" onclick="handleLogout()" src="https://i.postimg.cc/sxkd1kL5/1768833548.jpg" alt="фото Насти">
         </header>
         <main>
             <h1></h1>
@@ -35,19 +38,22 @@
                     <span id="music"></span>
                 </div>
                 <div class="stats-items">
-                    <span>Первый указ после захвата мира:</span>
+                    <span>Первый указ:</span>
                     <span id="decree"></span>
                 </div>
             </section>
 
             <div class="blitz-container">
+                <!-- Заполнится из JS -->
             </div>
         </main>
         <footer>            
             <a href="#" id="tg-button" class="btn-tg">Написать в Telegram</a>            
-            <a href="#" class="btn-vk">Посмотреть ВК</a>
+            <a href="https://vk.com/idXXXXXXX" class="btn-vk">Посмотреть ВК</a>
         </footer>
     </div>
-<script src="script.js"></script>
+
+    <!-- Подключаем логику -->
+    <script src="script.js"></script>
 </body>
 </html>
