@@ -20,9 +20,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 40px 0;
 }
 
 /* СЛОЙ ЗВЕЗД */
@@ -72,11 +73,12 @@ body::before {
 
 /* КАРТОЧКА */
 .card {
+    margin: auto;
     display: none;
     background-color: var(--card-bg);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    width: 90%;
+    width: 92%;
     max-width: 400px;
     padding: 35px 25px;
     border-radius: 30px;
