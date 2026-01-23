@@ -208,3 +208,33 @@ button { background: var(--accent); color: var(--bg-color); width: 100%; }
     from { text-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
     to { text-shadow: 0 0 20px rgba(56, 189, 248, 0.8), 0 0 35px var(--accent); }
 }
+.modal-overlay {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Глубокое затемнение */
+    backdrop-filter: blur(8px);
+    z-index: 1000; /* Самый высокий приоритет слоя */
+    justify-content: center;
+    align-items: center;
+    border-radius:15px;
+}
+
+.modal-box {
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--accent);
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    width: 85%;
+    max-width: 320px;
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+    animation: modalPop 0.3s cubic-bezier(0.17, 0.89, 0.32, 1.28);
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

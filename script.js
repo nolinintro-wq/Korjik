@@ -28,9 +28,10 @@ function fillProfile() {
     document.getElementById('music').textContent = KorzhData.stats.music;
     document.getElementById('decree').textContent = KorzhData.stats.decree;
                 document.getElementById('vibe-born').textContent =
-KorzhData.vibe.born;              document.getElementById('vibe-birthday').textContent =
-KorzhData.vibe.birthday; document.getElementById('vibe-poetry').textContent = 
-KorzhData.vibe.poetry; document.getElementById('vibe-music').textContent = KorzhData.vibe.music;
+                KorzhData.vibe.born;              document.getElementById('vibe-birthday').textContent =
+                KorzhData.vibe.birthday; document.getElementById('vibe-poetry').textContent =
+                KorzhData.vibe.poetry; document.getElementById('vibe-music').textContent =
+                KorzhData.vibe.music;
 }
 
 function renderBlitz() { 
@@ -71,9 +72,9 @@ function checkAccess() {
         fillProfile();
         renderBlitz();
         initBlitzInteractivity();
-        alert('Доступ разрешен. Привет, Коржик! ❤️'); 
+        showAlert(`Доступ разрешен. Привет, ${KorzhData.name}! ❤️`);
     } else {
-        alert('Не-а, попробуй еще раз... ❌');
+        showAlert('Не-а, попробуй еще раз... ❌');
     }
 }
 
@@ -82,7 +83,7 @@ const btn = document.getElementById('tg-button');
 if (btn) { 
     btn.addEventListener('click', function(e) {           
         e.preventDefault(); 
-        alert('Коржик... я старался, старался... а ссылки на тг нету... ай,ай,ай 🤭');
+        showAlert('Коржик... я старался, старался... а ссылки на тг нету... ай,ай,ай 🤭');
     });
 }
 
@@ -110,3 +111,17 @@ const confirmReset = confirm("Вернуть экран блокировки?");
 localStorage.removeItem('isAuth'); 
 // 2. Мгновенно перезагружаем страницу
 location.reload(); } }
+// Универсальная функция показа сообщения
+function showAlert(message) {
+    const modal = document.getElementById('custom-modal');
+    const text = document.getElementById('modal-text');
+    const closeBtn = document.getElementById('modal-close');
+
+    text.textContent = message;
+    modal.style.display = 'flex';
+
+    // Закрытие при клике на кнопку
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    };
+}
