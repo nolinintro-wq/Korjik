@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Коржик Premium</title>
-    <!-- Подключаем шрифт -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Подключаем стили -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,60 +23,35 @@
             <img class="avatar" id="logout-trigger" onclick="handleLogout()" src="https://i.postimg.cc/sxkd1kL5/1768833548.jpg" alt="фото Насти">
         </header>
         <main>
-            
-            
             <h1></h1>
             <p class="tagline"></p>
             
             <section class="stats">
-                <div class="stats-items">
-                    <span>День рождения:</span>
-                    <span id="vibe-birthday"></span>
-                </div>
-                <div class="stats-items">
-                    <span>Появление:</span>
-                    <span id="vibe-born"></span>
-                </div>
-                <div class="stats-items">
-                    <span>Суперсила:</span>
-                    <span id="power"></span>
-                </div>
-                <div class="stats-items">
-                    <span>Вход в ринг:</span>
-                    <span id="music"></span>
-                </div>
-                <div class="stats-items">
-                    <span>Первый указ:</span>
-                    <span id="decree"></span>
-                </div>
-              
-                <div class="stats-items">
-                    <span>В сердце:</span>
-                    <span id="vibe-poetry"></span>
-                </div>
-                <div class="stats-items">
-                    <span>В наушниках:</span>
-                    <span id="vibe-music"></span>
-                </div>
+                <div class="stats-items"><span>День рождения:</span><span id="vibe-birthday"></span></div>
+                <div class="stats-items"><span>Появление:</span><span id="vibe-born"></span></div>
+                <div class="stats-items"><span>Суперсила:</span><span id="power"></span></div>
+                <div class="stats-items"><span>Вход в ринг:</span><span id="music"></span></div>
+                <div class="stats-items"><span>Первый указ:</span><span id="decree"></span></div>
+                <div class="stats-items"><span>В сердце:</span><span id="vibe-poetry"></span></div>
+                <div class="stats-items"><span>В наушниках:</span><span id="vibe-music"></span></div>
             </section>
 
-            <div class="blitz-container">
-                <!-- Заполнится из JS -->
-          </div>
-          <div id="custom-modal" class="modal-overlay">
-              <div class="modal-box"> 
-                  <p id="modal-text"></p> 
-                  <button id="modal-close">Принято 🫡</button> 
-              </div> 
-          </div>
+            <div class="blitz-container"></div>
         </main>
         <footer>            
             <a href="#" id="tg-button" class="btn-tg">Написать в Telegram</a>            
-            <a href="https://vk.com/idXXXXXXX" class="btn-vk">Посмотреть ВК</a>
+            <a href="#" class="btn-vk">Посмотреть ВК</a>
         </footer>
     </div>
 
-    <!-- Подключаем логику -->
+    <!-- КАСТОМНОЕ МОДАЛЬНОЕ ОКНО -->
+    <div id="custom-modal" class="modal-overlay">
+        <div class="modal-box">
+            <p id="modal-text"></p>
+            <button onclick="closeModal()">Принято 🫡</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
