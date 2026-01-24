@@ -93,9 +93,28 @@ window.onload = function() {
         fillProfile(); 
         renderBlitz(); 
         initBlitzInteractivity();
+        initMusicPlayer(); 
     } 
 };
+function initMusicPlayer() {
+    const player = document.getElementById('audio-player');
+    const playBtn = document.getElementById('play-btn');
+    const playIcon = document.getElementById('play-icon');
 
+    if (playBtn && player) {
+        playBtn.addEventListener('click', () => {
+            if (player.paused) {
+                player.play();
+                playIcon.textContent = '⏸'; // Меняем иконку на Паузу
+                playBtn.classList.add('playing');
+            } else {
+                player.pause();
+                playIcon.textContent = '▶'; // Меняем обратно
+                playBtn.classList.remove('playing');
+            }
+        });
+    }
+}
 // СБРОС
 function handleLogout() {
     if (confirm("Вернуть экран блокировки?")) {

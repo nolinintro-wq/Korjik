@@ -116,7 +116,37 @@ footer { margin-top: 30px; display: flex; gap: 15px; }
     border-radius: 25px; text-align: center; width: 80%; max-width: 300px;
     box-shadow: 0 0 40px rgba(56, 189, 248, 0.2); animation: modalPop 0.3s ease-out;
 }
+.player-container {
+    margin: 10px 0 25px;
+    display: flex;
+    justify-content: center;
+}
 
+.play-trigger {
+    background: rgba(56, 189, 248, 0.05); /* Очень легкий блик */
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: auto !important; /* Отменяем ширину 100% */
+}
+
+.play-trigger:active {
+    transform: scale(0.95);
+    background: rgba(56, 189, 248, 0.2);
+}
+
+/* Анимация вращения, когда музыка играет */
+.playing {
+    box-shadow: 0 0 15px var(--accent);
+    border-color: var(--accent);
+}
 @keyframes nebula { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 @keyframes stardrift { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
