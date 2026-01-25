@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Коржик Premium</title>
+    <title>Коржик Premium 🛰️</title>
+    <!-- Шрифты: СовременныйMontserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ЭКРАН ВХОДА -->
+
+    <!-- ЭКРАН ДОСТУПА -->
     <div id="login-screen">
         <img class="avatar" src="https://i.postimg.cc/brtY69c1/9a8a6eb652598aff8c0bbb1a77832b04.jpg" alt="Lock">
         <h3>Доступ ограничен</h3>
@@ -19,23 +21,25 @@
 
     <!-- ОСНОВНАЯ КАРТОЧКА -->
     <div class="card">
+        <!-- Переключатель тем (Роза Бодлера) -->
         <div class="theme-switcher" onclick="toggleTheme()">🥀</div>
+
         <header>            
             <img class="avatar" id="logout-trigger" onclick="handleLogout()" src="https://i.postimg.cc/sxkd1kL5/1768833548.jpg" alt="фото Насти">
         </header>
-        <main>
-            <h1></h1>
-            <div class="birthday-timer">До часа X осталось: <span id="days-left">--</span> дн.</div>
-            <!-- Скрытый аудио-тег -->
-<audio id="audio-player" src="song.mp3"></audio>
 
-<!-- Кнопка плеера -->
-<div class="player-container">
-    <button id="play-btn" class="play-trigger">
-        <span id="play-icon">▶</span> 
-        <span id="song-title">Пилот — Нет иного рая</span>
-    </button>
-</div>
+        <main>
+            <h1 id="main-title"></h1>
+            <div class="birthday-timer">До часа X осталось: <span id="days-left">--</span> дн.</div>
+            
+            <!-- Плеер -->
+            <audio id="vibe-player" src="song.mp3" loop></audio>
+            <div class="player-zone">
+                <button id="music-btn" class="play-trigger">
+                    <span id="music-icon">▶</span>
+                    <span id="music-text">Слушать Пилот 🎶</span>
+                </button>
+            </div>
 
             <p class="tagline"></p>
             
@@ -50,25 +54,23 @@
             </section>
 
             <div class="blitz-container"></div>
+
+            <!-- Блок мыслей (Бортовой журнал) -->
             <section class="journal-section">
-    <!-- Сделаем заголовок кликабельным -->
-    <button id="journal-trigger" class="btn-journal" onclick="toggleJournal()">
-        📂 Открыть бортовой журнал
-    </button>
-    
-    <!-- Контейнер теперь скрыт через CSS -->
-    <div id="journal-container" class="journal-hidden">
-        <!-- Сюда JS вставит записи -->
-    </div>
-</section>
+                <button id="journal-trigger" class="btn-journal" onclick="toggleJournal()">
+                    📂 Открыть бортовой журнал
+                </button>
+                <div id="journal-container" class="journal-hidden"></div>
+            </section>
         </main>
+
         <footer>            
             <a href="#" id="tg-button" class="btn-tg">Написать в Telegram</a>            
-            <a href="#" class="btn-vk">Посмотреть ВК</a>
+            <a href="https://vk.com/id1" target="_blank" class="btn-vk">Посмотреть ВК</a>
         </footer>
     </div>
 
-    <!-- КАСТОМНОЕ МОДАЛЬНОЕ ОКНО -->
+    <!-- КАСТОМНЫЕ УВЕДОМЛЕНИЯ -->
     <div id="custom-modal" class="modal-overlay">
         <div class="modal-box">
             <p id="modal-text"></p>
