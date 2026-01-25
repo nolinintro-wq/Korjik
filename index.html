@@ -19,6 +19,7 @@
 
     <!-- ОСНОВНАЯ КАРТОЧКА -->
     <div class="card">
+        <div class="theme-switcher" onclick="toggleTheme()">🥀</div>
         <header>            
             <img class="avatar" id="logout-trigger" onclick="handleLogout()" src="https://i.postimg.cc/sxkd1kL5/1768833548.jpg" alt="фото Насти">
         </header>
@@ -35,6 +36,7 @@
         <span id="song-title">Пилот — Нет иного рая</span>
     </button>
 </div>
+
             <p class="tagline"></p>
             
             <section class="stats">
@@ -48,6 +50,17 @@
             </section>
 
             <div class="blitz-container"></div>
+            <section class="journal-section">
+    <!-- Сделаем заголовок кликабельным -->
+    <button id="journal-trigger" class="btn-journal" onclick="toggleJournal()">
+        📂 Открыть бортовой журнал
+    </button>
+    
+    <!-- Контейнер теперь скрыт через CSS -->
+    <div id="journal-container" class="journal-hidden">
+        <!-- Сюда JS вставит записи -->
+    </div>
+</section>
         </main>
         <footer>            
             <a href="#" id="tg-button" class="btn-tg">Написать в Telegram</a>            
