@@ -115,7 +115,7 @@ function sendChatMessage() {
     if (!val) return;
     addChatMessage(input.value, 'user'); input.value = '';
     setTimeout(() => {
-        if (val === 'трипликс') {
+        if (val === 'немой') {
             addChatMessage("Личность подтверждена. Архив разблокирован.", "bot");
             setTimeout(() => {
                 document.getElementById('journal-gate').style.display = 'none';
