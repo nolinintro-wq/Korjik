@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Коржик Premium 🛰️</title>
+    <title>Korjik Premium | Protocol 030</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ЭКРАН ВХОДА -->
     <div id="login-screen">
-        <img class="avatar" src="https://i.postimg.cc/brtY69c1/9a8a6eb652598aff8c0bbb1a77832b04.jpg" alt="Lock">
+        <img class="avatar" src="https://i.postimg.cc/brtY69c1/9a8a6eb652598aff8c0bbb1a77832b04.jpg" alt="Secure">
         <h3>Доступ ограничен</h3>
-        <p>Для входа ответь на вопрос: Корж только нежнее?</b></p>
+        <p>Для входа ответь на вопрос:<br><b>Кто обворожительный котик?</b></p>
         <input type="text" id="password-input" placeholder="Твой ответ...">
         <button onclick="checkAccess()">Открыть доступ</button>
     </div>
-</>
+
+    <!-- ОСНОВНАЯ КАРТОЧКА -->
     <div class="card" id="main-card">
-        <div class="theme-switcher" onclick="toggleTheme()">🥀</div>
         <header>            
-            <img class="avatar" id="logout-trigger" onclick="handleLogout()" src="https://i.postimg.cc/sxkd1kL5/1768833548.jpg" alt="фото Насти">
+            <img class="avatar" id="logout-trigger" onclick="handleLogout()" src="https://i.postimg.cc/sxkd1kL5/1768833548.jpg" alt="Bio-metric">
         </header>
 
         <main>
@@ -28,10 +29,10 @@
             <div id="days-left-box" class="birthday-timer">До часа X: <span id="days-left">--</span> дн.</div>
             
             <audio id="audio-player" src="song.mp3" loop></audio>
-            <div class="player-container">
-                <button id="play-btn" class="play-trigger">
-                    <span id="play-icon">▶</span> 
-                    <span id="song-title">Пилот — Нет иного рая 🎶</span>
+            <div class="player-zone">
+                <button id="music-btn" class="play-trigger">
+                    <span id="music-icon">▶</span>
+                    <span id="music-text">Слушать Пилот 🎶</span>
                 </button>
             </div>
 
@@ -49,27 +50,25 @@
 
             <div class="blitz-container"></div>
 
-            <section class="journal-section">
-                <button id="journal-trigger" class="btn-journal" onclick="toggleJournal()">📂 Открыть архив мыслей</button>
-                
-                <div id="journal-gate" class="journal-hidden">
-                    <div class="chat-wrapper">
-                        <div id="chat-messages" class="chat-box">
-                            <p class="bot-msg">Канал зашифрован. Введите идентификатор для расшифровки...</p>
-                        </div>
-                        <div class="chat-input-area">
-                            <input type="text" id="chat-input" placeholder="Всему свое время...">
-                            <button onclick="sendChatMessage()">📡</button>
-                        </div>
-                    </div>
+            <!-- БЛОК СИСТЕМНОЙ ОШИБКИ (РАЗВЕРНУТ СРАЗУ) -->
+            <section class="error-section">
+                <div class="error-header">⚠️ INITIALIZATION FAILED: CRITICAL LOGIC ERROR</div>
+                <div class="terminal-box">
+                    <p id="final-logic-text" class="philosophical-text"></p>
                 </div>
-                <div id="journal-container" class="journal-hidden"></div>
+                 <audio id="audio-player" src="Animal_DzhaZ_-_Ne_tvoya_smert_64454537.mp3" loop></audio>
+            <div class="player-zone">
+                <button id="music-btn" class="play-trigger">
+                    <span id="music-icon">▶</span>
+                    <span id="music-text">Слушать Animal jazz 🎶</span>
+                </button>
+            </div>
             </section>
         </main>
 
         <footer>            
             <a href="#" id="tg-button" class="btn-tg">Написать в Telegram</a>            
-            <a href="https://vk.ru/id104157803" target="_blank" class="btn-vk">Посмотреть ВК</a>
+            <a href="https://vk.com/id1" target="_blank" class="btn-vk">Посмотреть ВК</a>
         </footer>
     </div>
 
